@@ -5,6 +5,8 @@ import OwlCarousel from "react-owl-carousel";
 import axios from "axios";
 import Skeleton from "../UI/Skeleton";
 import Countdown from "../Countdown";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 const NewItems = () => {
   const [newItems, setNewItems] = useState([]);
@@ -39,9 +41,13 @@ const NewItems = () => {
     getNewItems();
   }, []);
 
+  useEffect(() => {
+    Aos.init();
+  }, []);
+
   return (
     <section id="section-items" className="no-bottom">
-      <div className="container">
+      <div className="container" data-aos="fade-right" data-aos-duration="600">
         <div className="row">
           <div className="col-lg-12">
             <div className="text-center">

@@ -6,6 +6,8 @@ import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 import { useEffect } from "react";
 import Skeleton from "../UI/Skeleton";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 const HotCollections = () => {
   const [hotCollections, setHotCollections] = useState([]);
@@ -40,9 +42,13 @@ const HotCollections = () => {
     getExploreData();
   }, []);
 
+  useEffect(() => {
+    Aos.init();
+  }, []);
+
   return (
     <section id="section-collections" className="no-bottom">
-      <div className="container">
+      <div className="container" data-aos="fade-left" data-aos-duration="600">
         <div className="row fadeIn">
           <div className="col-lg-12">
             <div className="text-center">

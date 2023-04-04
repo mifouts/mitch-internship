@@ -4,6 +4,8 @@ import AuthorItems from "../components/author/AuthorItems";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import Skeleton from "../components/UI/Skeleton";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 const Author = () => {
   const [author, setAuthor] = useState("");
@@ -22,6 +24,12 @@ const Author = () => {
     getAuthor();
   }, [getAuthor]);
 
+  useEffect(() => {
+    Aos.init({
+      duration: 600,
+    });
+  }, []);
+
   return (
     <div id="wrapper">
       <div className="no-bottom no-top" id="content">
@@ -36,7 +44,7 @@ const Author = () => {
         ></section>
 
         <section aria-label="section">
-          <div className="container">
+          <div className="container" data-aos="fade-up">
             <div className="row">
               <div className="col-md-12">
                 <div className="d_profile de-flex">

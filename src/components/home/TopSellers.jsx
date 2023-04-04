@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import Skeleton from "../UI/Skeleton";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 const TopSellers = () => {
   const [topSellers, setTopSellers] = useState([]);
@@ -17,9 +19,13 @@ const TopSellers = () => {
     getTopSellers();
   }, []);
 
+  useEffect(() => {
+    Aos.init();
+  }, []);
+
   return (
     <section id="section-popular" className="pb-5">
-      <div className="container">
+      <div className="container" data-aos-duration="600" data-aos="fade-up">
         <div className="row">
           <div className="col-lg-12">
             <div className="text-center">
