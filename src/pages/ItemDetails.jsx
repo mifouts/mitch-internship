@@ -58,7 +58,7 @@ const ItemDetails = () => {
                             <Link to={`/author/${itemDetails.ownerId}`}>
                               <img
                                 className="lazy"
-                                src={itemDetails.authorImage}
+                                src={itemDetails.ownerImage}
                                 alt=""
                               />
                               <i className="fa fa-check"></i>
